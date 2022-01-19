@@ -6,8 +6,8 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 function ListItem({ images, productName, category, stock, status }) {
   return (
     <>
-      <div className="grid grid-cols-5 md:grid-cols-6 bg-white p-3 my-4 rounded-md ">
-        <div className=" -space-x-4 overflow-hidden hidden md:flex">
+      <div className="grid grid-cols-5 md:grid-cols-6 bg-white p-3 my-4 rounded-md shadow-md">
+        <div className=" -space-x-4 overflow-hidden hidden md:flex items-center">
           {images.map((item, index) => {
             return (
               <img
@@ -31,16 +31,16 @@ function ListItem({ images, productName, category, stock, status }) {
             status === "Active" ? "text-green-500" : "text-red-600"
           }`}
         >
-          <BsCheck2Square className="mr-2" />{" "}
+          <BsCheck2Square className="mr-2" title={status} />{" "}
           <span className="hidden md:block">{status}</span>
         </div>
         <div className="flex items-center justify-center">
           <div className="text-gray-900 flex items-center justify-center px-1 cursor-pointer">
-            <FiEdit className="mr-2" />{" "}
+            <FiEdit className="mr-2" title="Edit" />{" "}
             <span className="hidden lg:block">Edit</span>
           </div>
           <div className="text-red-600 flex items-center justify-center px-1 cursor-pointer">
-            <RiDeleteBin6Line className="mr-2" />{" "}
+            <RiDeleteBin6Line className="mr-2" title="Delete" />{" "}
             <span className="hidden lg:block">Delete</span>
           </div>
         </div>
